@@ -1,16 +1,19 @@
-
-team1_score = 3
-team2_score = 0
+#Football scores calculator when: exact result > 3 points, goal difference > 2 points, correct tendency > 1 point#
+team1_score = 1
+team2_score = 3
+team1_guess_score = 0
+team2_guess_score = 2
 score_difference = team1_score - team2_score
-team1_guess_score = 2
-team2_guess_score = 1
 score_difference_guess = team1_guess_score - team2_guess_score
 
-if team1_score and team2_score == team1_guess_score and team2_guess_score:
-  print("3 points")
+
+if team1_score == team1_guess_score and team2_score == team2_guess_score:
+  print("You got 3 points")
 elif score_difference == score_difference_guess:
-  print("2 points")
-elif team1_score > team2_score == team1_guess_score > team2_guess_score:
-  print("1 point")
+  print("You got 2 points")
+elif team1_score > team2_score and team1_guess_score > team2_guess_score:
+  print("You got 1 point")
+elif team1_score < team2_score and team1_guess_score < team2_guess_score:
+  print("You got 1 point")
 else:
-    print("0 points")
+  print("0 points")
