@@ -8,12 +8,12 @@ score_difference_guess = team1_guess_score - team2_guess_score
 
 
 if team1_score == team1_guess_score and team2_score == team2_guess_score:
-  print("You got 3 points")
+  print("You guessed the exact result. You got 3 points")
 elif score_difference == score_difference_guess:
-  print("You got 2 points")
+  print("You get right the goal difference. You got 2 points")
 elif team1_score > team2_score and team1_guess_score > team2_guess_score:
-  print("You got 1 point")
+  print("You get the tendence right. You got 1 point")
 elif team1_score < team2_score and team1_guess_score < team2_guess_score:
-  print("You got 1 point")
+  print("You get the tendence right. You got 1 point")
 else:
-  print("0 points")
+  print("You missed it. 0 points")
