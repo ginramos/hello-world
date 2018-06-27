@@ -1,19 +1,24 @@
-#Football scores calculator when: exact result > 3 points, goal difference > 2 points, correct tendency > 1 point#
-team1_score = 1
-team2_score = 3
-team1_guess_score = 0
-team2_guess_score = 2
-score_difference = team1_score - team2_score
-score_difference_guess = team1_guess_score - team2_guess_score
+#Create two lists with the actual and guessed results for group A 
+actual_results_groupa = [[6,4],[1,0],[3,2],[7,1],[3,0],[11,10]]
+guessed_results_groupa_group1 = [[4,5],[5,4],[1,1],[2,4],[5,9],[4,12]]
+total_points = 0
+#iterate over the lists comparing the results and printing values
+for (x,y) in zip(actual_results_groupa, guessed_results_groupa_group1):
+  if x[0] == y[0] and x[1] == y[1]:
+    print("You got right the exact result. You receive 3 points")
+    points = 3
+  elif x[0] - y[0] == x[1] - y[1]:
+    print("You got right the goal difference. You receive 2 points")
+    points = 2
+  elif x[0] > x[1] and y[0] > y[1]:
+    print("You got right the tendency. You receive 1 points")
+    points = 1
+  elif x[0] < x[1] and y[0] < y[1]:
+    print("You got right the tendency. You receive 1 points")
+    points = 1
+  else:
+    print("You missed completely. No points for you")
+    points = 0
+  total_points += points
 
-
-if team1_score == team1_guess_score and team2_score == team2_guess_score:
-  print("You guessed the exact result. You got 3 points")
-elif score_difference == score_difference_guess:
-  print("You get right the goal difference. You got 2 points")
-elif team1_score > team2_score and team1_guess_score > team2_guess_score:
-  print("You get the tendence right. You got 1 point")
-elif team1_score < team2_score and team1_guess_score < team2_guess_score:
-  print("You get the tendence right. You got 1 point")
-else:
-  print("You missed it. 0 points")
+print(total_points) 
